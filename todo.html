@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .site-header__text {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__inner">
+                <p class="logo">
+                    <img class="logo__img" src="./images/logo.png" alt="Site logo">
+                </p>
+                <p class="site-header__text">
+                    Todo List
+                </p>
+                <button class="site-header__logout">LOG OUT</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="todos">
+            <div class="container">
+                <div class="todos__inner">
+                    <h1 class="todos__title">My Todos</h1>
+                    <form class="todos__form">
+                        <input class="todo-input" type="text" placeholder="Todo...">
+                        <button type="submit">Add</button>
+                    </form>
+                    <ul class="todos__list">
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="./js/main.js"></script>
+
+</html>
