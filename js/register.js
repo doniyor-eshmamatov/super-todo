@@ -7,11 +7,8 @@ let elPasswordInput = document.querySelector('.js-password');
 elForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
-    // function fetched() {
-        
-    // }
-    // fetched();
-    fetch('http://localhost:5000/user/register', {
+    function fetched() {
+        fetch('http://localhost:5000/user/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -23,13 +20,15 @@ elForm.addEventListener('submit', (evt) => {
                 password: elPasswordInput.value
             })
         })
-        .then((res) => res.json())
-        .then((data) => {
-            if (data.token) {
-                localStorage.setItem('token', data.token);
-                location.replace('index.html')
-            }
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.token) {
+                    localStorage.setItem('token', data.token);
+                    location.replace('index.html')
+                }
+            })
+    }
+    fetched();
 })
 
 let back = document.querySelector('.back');
