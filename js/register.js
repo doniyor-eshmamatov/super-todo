@@ -4,6 +4,20 @@ let elPhoneInput = document.querySelector('.js-phone');
 let elEmailInput = document.querySelector('.js-email');
 let elPasswordInput = document.querySelector('.js-password');
 
+let showPassword = document.querySelector('.js-hide');
+
+showPassword.addEventListener('click', () => {
+    if (elPasswordInput.type == 'password') {
+        elPasswordInput.type = 'text';
+        showPassword.src = '../images/hide.png';
+    }
+    else {
+        elPasswordInput.type = 'password';
+        showPassword.src = '../images/show.png';
+    }
+})
+
+
 elForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
 

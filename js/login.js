@@ -1,6 +1,18 @@
 let elPassInput = document.querySelector('.js-password');
 let elEmailnput = document.querySelector('.js-email')
 let elForm = document.querySelector('.login-form');
+let showPassword = document.querySelector('.js-hide');
+
+showPassword.addEventListener('click', () => {
+    if (elPassInput.type == 'password') {
+        elPassInput.type = 'text';
+        showPassword.src = '../images/hide.png';
+    }
+    else {
+        elPassInput.type = 'password';
+        showPassword.src = '../images/show.png';
+    }
+})
 
 
 

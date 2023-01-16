@@ -98,7 +98,6 @@ html {
 
 
 
-
 .register__hero {
     padding: 40px 80px;
 }
@@ -120,7 +119,6 @@ html {
 
 .hero__form input {
     padding: 10px 15px;
-    margin-bottom: 10px;
     min-width: 250px;
     border: 1px solid #fff;
     outline: none;
@@ -156,27 +154,18 @@ html {
     min-width: 100px;
 }
 
-label {
-    position: relative;
+.label-after {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    margin-top: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 20px;
 }
-
-label::after {
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-image: url('../images/show.png');
-    /* background-size: 100%; */
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    content: '';
+.js-phone {
+    margin: 10px 0;
 }
-
-
-
 
 .todos {
     position: absolute;
@@ -301,4 +290,62 @@ label::after {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 576px) {
+    .hero {
+        padding: 20px 20px;
+    }
+    .hero__title {
+        font-size: 12px;
+    }
+
+    .hero__inner {
+        flex-direction: column;
+    }
+    .hero_btnbox {
+        flex-direction: column;
+    }
+
+    .hero__or {
+        margin: 10px 0;
+    }
+
+    .register__hero {
+        padding: 20px 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+
+    .todos {
+        padding: 20px 0;
+    }
+
+    .todos__inner {
+        min-width: 280px;
+    }
+    .todos__form {
+        min-width: 250px;
+    }
+
+    .todos__form input {
+        min-width: 220px;
+    }
+
+    .todos__list {
+        min-width: 250px;
+    }
 }

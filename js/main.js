@@ -16,6 +16,18 @@ let elTodoVal = document.querySelector('.todo-input');
 let elList = document.querySelector('.todos__list');
 let todos = [];
 
+async function getTodos() {
+    const res = await fetch('http://localhost:5000/todo', {
+        headers: {
+            Authorization: token,
+        }
+    });
+    const data = await res.json();
+    todos = data;
+    renderTodos(todos)
+}
+getTodos();
+
 function renderTodos(array) {
     elList.innerHTML = '';
     array.forEach(el => {
@@ -33,23 +45,15 @@ function renderTodos(array) {
     elTodoVal.value = '';
 }
 
-async function getTodos() {
-    const res = await fetch('http://localhost:5000/todo', {
-        headers: {
-            Authorization: token,
-        }
-    });
-    const data = await res.json();
-    renderTodos(data);
-}
-getTodos();
-
-
 todoForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     function postTodos() {
         if(elTodoVal.value == '') {
+            elTodoVal.style.borderColor = 'red';
             return 0;
+        }
+        else {
+            elTodoVal.style.borderColor = 'rgb(199, 198, 198)';
         }
         fetch('http://localhost:5000/todo', {
             method: 'POST',
@@ -71,7 +75,6 @@ todoForm.addEventListener('submit', (evt) => {
         .catch(err => console.log(err))
     }
     postTodos();
-    location.reload();
 })
 
 function deleteTodo(id) {
